@@ -1,0 +1,428 @@
+/*========== Google Font ==========*/
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap");
+
+:root {
+  --header-height: 3.5rem;
+
+  /*========== Colors ==========*/
+  --main-color: #702afc;
+  --second-color: #dac3f7;
+  --third-color: #5f4d92;
+  --text-color: #3d3d3d;
+  --text-color-light: rgba(0, 0, 0, 0.5);
+  --body-color: #ffffff;
+
+  /*========== Font and typhography ==========*/
+  --body-font: "Poppins", sans-serif;
+  --font-jakarta-plus: "Plus Jakarta Sans", sans-serif;
+  --normal-font-size: 0.938rem;
+  --big-font: 1.25rem;
+  --biggest-font-size: 2.5rem;
+  --smaller-font-size: 0.75rem;
+
+  /*========== Font weight ==========*/
+  --font-semi-bold: 600;
+  --font-bold: 700;
+
+  /*========== z index ==========*/
+  --z-fixed: 100;
+
+  /*========== Margenes ==========*/
+  --mb-0-5: 0.5rem;
+  --mb-0-75: 0.75rem;
+  --mb-1: 1rem;
+  --mb-1-5: 1.5rem;
+  --mb-2: 2rem;
+  --mb-3: 3rem;
+  --mb-4: 4rem;
+}
+
+/* Responsive typography */
+@media only screen and (min-width: 1024px) {
+  :root {
+    --biggest-font-size: 4.5rem;
+    --big-font: 1.5rem;
+    --normal-font-size: 1rem;
+    --smaller-font-size: 0.813rem;
+  }
+}
+
+/*========== BASE ==========*/
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-size: var(--normal-font-size);
+  background-color: var(--body-color);
+  font-family: var(--body-font);
+  color: var(--text-color);
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--main-color);
+  border-radius: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgb(231, 231, 225);
+}
+
+/*=============== REUSABLE CSS CLASES ===============*/
+.container {
+  max-width: 1024px;
+  margin-inline: var(--mb-1-5);
+}
+
+.main {
+  overflow: hidden;
+}
+
+/*=============== HEADER & NAV ===============*/
+.header {
+  width: 100%;
+  background-color: var(--body-color);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: var(--z-index);
+  transition: background 0.5s;
+}
+
+.nav {
+  position: relative;
+  height: var(--header-height);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+}
+
+.nav__link,
+.nav__logo,
+.nav__toggle {
+  color: var(--text-color-light);
+}
+
+.nav__toggle {
+  display: inline-flex;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 767px) {
+  .nav__menu {
+    position: fixed;
+    background-color: var(--body-color);
+    width: 100%;
+    left: 0;
+    top: -100%;
+    padding: 4rem 0 3.5rem;
+    transition: top 0.5s;
+    overflow: hidden;
+  }
+}
+
+.nav__list {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  row-gap: 1.5rem;
+}
+
+.nav__link {
+  font-weigh: var(--font-semi-bold);
+  transition: color 0.5s;
+}
+
+.nav__link:hover {
+  color: var(--first-color);
+}
+
+.nav__close {
+  position: absolute;
+  top: 1rem;
+  right: 1.5rem;
+  cursor: pointer;
+}
+
+/* Show menu */
+.show-menu {
+  top: 0;
+}
+
+/* Active Link*/
+.active-link {
+  color: var(--main-color);
+  font-weight: var(--font-semi-bold);
+  position: relative;
+}
+
+.button__header {
+  background: linear-gradient(99.47deg, #dea720 4.09%, #ffcc50 4.1%, #ffb505 60.38%);
+  box-shadow: 0px 4px 25px 5px rgba(146, 85, 250, 0.25);
+  border-radius: 20px;
+  color: white;
+  padding: 0.5rem 2rem;
+}
+
+/*=============== HOME ===============*/
+.home {
+  /* position: relative; */
+  background-image: url("/assets/img/background.png") !important;
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center;
+}
+
+.home__container {
+  /* position: relative; */
+  padding: 7rem 0;
+}
+
+.home__subtitle {
+  color: white;
+  background: var(--third-color);
+  border-radius: 3px;
+  width: max-content;
+  font-size: var(--smaller-font-size);
+  padding: var(--mb-0-5);
+  z-index: -100;
+  margin: var(--mb-1) auto;
+}
+
+.home__title {
+  font-size: var(--biggest-font-size);
+  margin-bottom: var(--mb-0-75);
+  color: var(--second-color);
+  font-family: var(--font-jakarta-plus);
+}
+
+.home__description {
+  color: white;
+  margin-bottom: var(--mb-1-5);
+}
+
+.button_home {
+  background: linear-gradient(99.47deg, #dea720 4.09%, #ffcc50 4.1%, #ffb505 60.38%);
+  box-shadow: 0px 4px 25px 5px rgba(146, 85, 250, 0.25);
+  border-radius: 28.5px 8px;
+  padding: 0.75rem 2rem;
+  color: white;
+  transition: box-shadow 0.4s;
+}
+
+.home__images {
+  display: grid;
+  /* position: relative; */
+}
+
+.home__image {
+  margin-top: var(--mb-1-5);
+  justify-self: center;
+  animation: float-img 3s ease-in-out infinite;
+  width: 300px;
+}
+
+/* Animation image */
+@keyframes float-img {
+  0% {
+    transform: translateY(0.25rem);
+  }
+  50% {
+    transform: translateY(2rem);
+  }
+  100% {
+    transform: translateY(0.25rem);
+  }
+}
+
+/*=============== CONTENT ===============*/
+.content__container,
+.faq__container {
+  padding: 5rem 1rem;
+}
+
+.content__info,
+.faq__info,
+.faq__image {
+  text-align: center;
+}
+
+.content__title,
+.faq__title {
+  font-weight: var(--font-semi-bold);
+  margin-bottom: var(--mb-1-5);
+}
+
+.content__subtitle,
+.faq__subtitle {
+  font-size: var(--smallest-font-size);
+  letter-spacing: 0.005em;
+  line-height: 170.3%;
+}
+
+/*=============== CONTENT ===============*/
+.accordion {
+  display: grid;
+}
+
+.accordion__container {
+  display: grid;
+  margin-top: -3rem;
+  padding: 0 0 7rem 0;
+}
+
+.accordion__title {
+  font-size: var(--small-font-size);
+  color: var(--title-color);
+  font-weight: var(--font-semi-bold);
+  margin-top: 0.15rem;
+  transition: 0.2s;
+}
+
+.accordion__header {
+  display: flex;
+  justify-content: space-between;
+  padding: 1.25rem;
+  cursor: pointer;
+  border-radius: 0.25rem 0.25rem 0 0;
+}
+
+.accordion__description {
+  padding: 1.25rem 3rem 1.25rem 1.25rem;
+}
+
+.accordion__icon {
+  width: 1.5rem;
+  height: max-content;
+  transition: 0.3s;
+}
+
+.accordion__item {
+  background: #ffffff;
+  position: relative;
+  transition: all 0.25s ease;
+}
+
+.accordion__content {
+  overflow: hidden;
+  height: 0;
+  transition: all 0.25s ease;
+  border: 1px solid #efefef;
+}
+
+.accordion-open > .accordion__header {
+  background: var(--main-color);
+  color: white;
+}
+
+/*=============== BREAKPOINTS ===============*/
+/* Small devices */
+@media screen and (max-width: 340px) {
+  .container {
+    margin-inline: var(--mb-1);
+  }
+}
+
+/* Medium devices */
+@media screen and (min-width: 767px) {
+  .nav {
+    height: calc(var(--header-height) + 1rem);
+    /* box-shadow: 0px 2px 10px rgba(191, 190, 188, 0.55); */
+  }
+  .nav__close,
+  .nav__toggle {
+    display: none;
+  }
+  .nav__list {
+    flex-direction: row;
+    column-gap: 2rem;
+  }
+  .home__container {
+    height: 100vh;
+    padding: 0 1rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    justify-content: center;
+    gap: 2rem 4rem;
+  }
+  .home__image {
+    width: 100%;
+  }
+  .home {
+    text-align: start;
+  }
+  .home__subtitle {
+    margin: var(--mb-1) 0;
+  }
+
+  .active-link::before {
+    content: "";
+    position: absolute;
+    bottom: -0.75rem;
+    left: 25%;
+    width: 35px;
+    height: 5px;
+    background-color: var(--main-color);
+    border-radius: 12px;
+  }
+}
+/* Large devices */
+@media screen and (min-width: 1024px) {
+  /* home */
+  .home__title {
+    margin-bottom: 1rem;
+  }
+  .home__description {
+    margin-bottom: 3rem;
+  }
+  .home__subtitle,
+  .home__description,
+  .button_home {
+    font-size: 1.125rem;
+  }
+  .button_home {
+    padding: 1rem 2rem;
+  }
+
+  /* content */
+  .content__title,
+  .faq__title {
+    font-size: 2rem;
+  }
+
+  .content__subtitle,
+  .faq__subtitle {
+    font-size: 1.125rem;
+  }
+}
+
+@media screen and (min-width: 1048px) {
+  .container {
+    margin-inline: auto;
+  }
+}
