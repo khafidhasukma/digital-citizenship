@@ -115,8 +115,9 @@ img {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: var(--z-index);
+  z-index: var(--z-fixed);
   transition: background 0.5s;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
 }
 
 .nav {
@@ -309,10 +310,11 @@ img {
 
 .accordion__title {
   font-size: var(--small-font-size);
-  color: var(--title-color);
   font-weight: var(--font-semi-bold);
   margin-top: 0.15rem;
   transition: 0.2s;
+  font-weight: 500;
+  letter-spacing: 0.05em;
 }
 
 .accordion__header {
@@ -326,6 +328,7 @@ img {
 
 .accordion__description {
   padding: 1.25rem 3rem 1.25rem 1.25rem;
+  letter-spacing: 0.05em;
 }
 
 .accordion__icon {
@@ -405,7 +408,7 @@ img {
 
 .box__content:hover > .box__desc {
   display: block;
-  transition-delay: 0.1s;
+  transition-delay: 0.3s;
 }
 
 .box__icon {
@@ -433,13 +436,12 @@ img {
   letter-spacing: 0.03em;
   padding: 1rem;
   display: none;
-  transition: 0.3s ease-in-out;
+  transition: 0.8s ease-in-out;
 }
 
 /*=============== INDEX ARTICLE ===============*/
 .article__container,
 .article__container2 {
-  padding-bottom: 5rem;
   text-align: center;
 }
 .article__title,
@@ -462,6 +464,7 @@ img {
 }
 .article__desc2 {
   margin: var(--mb-1) 0 3rem 0;
+  text-align: start;
 }
 .article__desc1,
 .article__desc2 {
@@ -486,6 +489,7 @@ img {
   padding: 2rem 2rem 0 2rem;
   display: flex;
   flex-wrap: wrap;
+  gap: var(--mb-1);
   flex-direction: column;
   align-items: center;
   height: auto;
@@ -501,6 +505,7 @@ img {
   border-radius: 7px 141.5px 7px 7px;
   padding: var(--mb-1);
   height: 18rem;
+  max-width: 13rem;
   transition: transform 400ms ease;
   overflow: hidden !important;
   position: relative;
@@ -528,6 +533,7 @@ img {
   letter-spacing: 0.005em;
   color: #1e1b1c;
   display: none;
+  cursor: pointer;
 }
 .card__value:hover {
   background: linear-gradient(95.25deg, #dea720 -5.14%, #ffcc50 -5.13%, #ffb505 55.03%);
@@ -617,6 +623,61 @@ footer {
   letter-spacing: 0.05em;
 }
 
+/*=============== ARTICLE PAGE ===============*/
+.main__container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--mb-1-5);
+}
+.main__desc,
+.second__desc {
+  font-weight: 400;
+  line-height: 27px;
+  letter-spacing: 0.03em;
+  color: rgba(0, 0, 0, 0.6);
+  margin-bottom: var(--mb-1);
+}
+.second__more,
+.main__more {
+  letter-spacing: 0.03em;
+  color: #6c8cfe;
+}
+.second__container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--mb-1-5);
+}
+.second__desc {
+  font-size: var(--smaller-font-size);
+}
+.second__title {
+  color: #36276a;
+}
+.second__more {
+  font-size: var(--normal-font-size);
+}
+.contents {
+  margin-bottom: var(--mb-2);
+}
+.main__container,
+.detail__article {
+  padding: 7rem 0 2rem 0;
+}
+.detail__image img {
+  border-radius: 10px;
+}
+
+/*=============== DETAIL ARTICLE ===============*/
+.detail__desc {
+  font-weight: 400;
+  line-height: 150%;
+  text-align: justify;
+  letter-spacing: 0.02em;
+}
+.detail__title {
+  text-align: center;
+  margin: var(--mb-1-5);
+}
 /*=============== BREAKPOINTS ===============*/
 /* Small devices */
 @media screen and (max-width: 340px) {
@@ -746,7 +807,7 @@ footer {
   .value__content {
     flex-direction: row;
     align-items: end;
-    height: 22rem;
+    height: 24rem;
     gap: var(--mb-1);
   }
 }
@@ -765,7 +826,8 @@ footer {
   .button_article,
   .article__desc,
   .banner__subtitle,
-  .value__subtitle {
+  .value__subtitle,
+  .main__more {
     font-size: 1.125rem;
   }
   .button_home,
@@ -779,7 +841,9 @@ footer {
   .article__title,
   .article__title2,
   .banner__title,
-  .value__title {
+  .value__title,
+  .main__title,
+  .detail__title {
     font-size: 2rem;
   }
 
