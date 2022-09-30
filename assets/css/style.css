@@ -6,10 +6,20 @@
   --header-height: 3.5rem;
 
   /*========== Colors ==========*/
-  --main-color: #702afc;
+  --black: #1e1b1c;
+  --dark-gray: #3d3d3d;
+  --gray1: #55565b;
+  --gray2: #9fa0ab;
+  --primary: #9255fa;
+  --primary2: #702afc;
+  --primary3: #301563;
+  --primary4: #492b81;
+  --primary5: #ff8652;
+  --accent: #fec02d;
+  --accent2: #ffd571;
+  --accent3: #ffc73f;
   --second-color: #dac3f7;
   --third-color: #5f4d92;
-  --text-color: #3d3d3d;
   --title-color: #39177f;
   --text-color-light: rgba(0, 0, 0, 0.5);
   --body-color: #ffffff;
@@ -64,7 +74,7 @@ body {
   font-size: var(--normal-font-size);
   background-color: var(--body-color);
   font-family: var(--body-font);
-  color: var(--text-color);
+  color: var(--dark-gray);
 }
 
 ul {
@@ -79,12 +89,11 @@ img {
   max-width: 100%;
   height: auto;
 }
-
 ::-webkit-scrollbar {
   width: 5px;
 }
 ::-webkit-scrollbar-thumb {
-  background: var(--main-color);
+  background: var(--primary);
   border-radius: 8px;
 }
 
@@ -103,9 +112,15 @@ img {
 }
 
 .text-color,
-.value__title span,
+.value__title,
 .content__title span {
   color: var(--title-color);
+}
+.text-title,
+.faq__title,
+.title__content,
+.privacy3__title {
+  color: var(--black);
 }
 
 /*=============== HEADER & NAV ===============*/
@@ -166,7 +181,7 @@ img {
 }
 
 .nav__link:hover {
-  color: var(--first-color);
+  color: var(--primary2);
 }
 
 .nav__close {
@@ -183,7 +198,7 @@ img {
 
 /* Active Link*/
 .active-link {
-  color: var(--main-color);
+  color: var(--primary2);
   font-weight: var(--font-semi-bold);
   position: relative;
 }
@@ -272,7 +287,9 @@ img {
 
 /*=============== CONTENT ===============*/
 .faq__container,
-.content2__container {
+.content2__container,
+.privacy__container,
+.bullying__container {
   padding: 7rem 1rem;
 }
 .content__container {
@@ -359,7 +376,7 @@ img {
 }
 
 .accordion-open > .accordion__header {
-  background: var(--main-color);
+  background: var(--primary);
   color: white;
 }
 
@@ -599,6 +616,9 @@ img {
   border-radius: 30px;
   padding: 4rem 0;
 }
+#banner {
+  margin-bottom: 7rem;
+}
 .banner__info {
   color: white;
 }
@@ -608,7 +628,6 @@ img {
 
 /* footer */
 footer {
-  margin-top: 7rem;
   text-align: center;
   background: #efe6ff;
   padding: 3rem;
@@ -629,7 +648,7 @@ footer {
   gap: var(--mb-2);
 }
 .footer__nav a {
-  color: var(--text-color);
+  color: var(--dark-gray);
 }
 .footer__copyright {
   margin-top: var(--mb-0-75);
@@ -638,11 +657,7 @@ footer {
 }
 
 /*=============== ARTICLE PAGE ===============*/
-.main__container {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: var(--mb-1-5);
-}
+
 .main__desc,
 .second__desc {
   font-weight: 400;
@@ -678,8 +693,11 @@ footer {
 }
 .second__container {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: var(--mb-4);
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--mb-2);
+}
+#article {
+  margin-bottom: 7rem;
 }
 .second__title {
   color: #36276a;
@@ -694,7 +712,7 @@ footer {
 
 .detail__article,
 .main__container {
-  padding: 8rem 0 5rem 0;
+  padding: 8rem 0 7rem 0;
 }
 .detail__image img {
   border-radius: 10px;
@@ -730,6 +748,266 @@ footer {
 .main__more {
   letter-spacing: 0.005em;
 }
+
+/* quote */
+.quote__container {
+  padding: 8rem 1rem;
+}
+.quote__box {
+  background: #ffffff;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+  display: grid;
+  grid-template-columns: 60% 40%;
+  overflow: hidden;
+  align-items: center;
+}
+.quote {
+  background-image: url("/assets/img/bg-quote.png") !important;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  text-align: start;
+}
+.quote__image img {
+  height: 100%;
+}
+.quote__image {
+  height: 100%;
+}
+.quote__title {
+  font-weight: 500;
+  font-size: 1.125rem;
+  line-height: 153%;
+  letter-spacing: 0.03em;
+  margin: var(--mb-1) 0 var(--mb-2) 0;
+}
+.quote__author {
+  font-weight: 700;
+  font-size: 1.25rem;
+  line-height: 153%;
+  letter-spacing: 0.03em;
+}
+.quote__text {
+  padding: var(--mb-2);
+}
+
+/* lesson */
+.privacy__info,
+.bullying__info {
+  text-align: center;
+}
+.privacy__subtitle,
+.bullying__subtitle {
+  margin: var(--mb-1-5) 0 var(--mb-2) 0;
+}
+.privacy__title span,
+.bullying__title span {
+  color: var(--primary);
+}
+.privacy__title,
+.bullying__title,
+.bullying3__title {
+  color: var(--black);
+}
+.title__content {
+  margin: var(--mb-4) 0 var(--mb-2) 0;
+}
+.privace__content,
+.privacy__content2,
+.privacy__content3 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--mb-3);
+  margin-bottom: var(--mb-3);
+}
+.privacy__content2 {
+  align-items: center;
+}
+.privacy__box {
+  border: 5px solid var(--primary);
+  border-radius: 10px;
+  width: 280px;
+  height: 365px;
+  padding: var(--mb-1-5);
+  justify-self: end;
+}
+
+.bullying__box {
+  border: 5px solid var(--primary);
+  border-radius: 10px;
+  width: 325px;
+  height: 365px;
+  padding: var(--mb-1-5);
+  justify-self: center;
+  align-self: center;
+}
+.privacy__box:hover,
+.bullying__box:hover {
+  background: linear-gradient(180deg, #3b1684 -11.18%, #0a1524 41.92%);
+  border: 1px solid #000000;
+  border-radius: 10px;
+  color: white;
+}
+.privacy__box:hover > .privacy__number,
+.privacy__box:hover > .privacy__desc,
+.bullying__box:hover > .bullying__number,
+.bullying__box:hover > .bullying__desc {
+  color: white;
+}
+.privacy__number,
+.bullying__number {
+  font-weight: 600;
+  font-size: 64px;
+  line-height: 78.4%;
+  letter-spacing: 0.005em;
+  color: var(--primary2);
+}
+.privacy__photo,
+.bullying__photo {
+  text-align: center;
+}
+.privacy__photo img,
+.bullying__photo img {
+  height: 120px;
+}
+.privacy__desc,
+.bullying__desc {
+  color: var(--primary2);
+  text-align: center;
+  font-weight: 500;
+  margin-top: var(--mb-1);
+}
+.privacy2,
+.bullying2 {
+  /* position: relative; */
+  background-image: url("/assets/img/bg-lesson.svg") !important;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  padding: 8rem 0 12rem;
+}
+.privacy2__container,
+.bullying2__container {
+  display: grid;
+  align-items: center;
+  grid-template-columns: 45% 55%;
+  gap: var(--mb-4);
+  color: white;
+}
+.privacy2__title,
+.bullying2__title {
+  margin-bottom: var(--mb-1-5);
+  line-height: 138.4%;
+  letter-spacing: 0.005em;
+}
+.privacy2__desc,
+.bullying4__subs,
+.bullying2__desc {
+  font-weight: 500;
+  line-height: 173.9%;
+  letter-spacing: 0.03em;
+}
+.privacy3__container {
+  padding: 3rem 0 7rem 0;
+}
+.privacy3__title {
+  text-align: center;
+  margin-bottom: var(--mb-4);
+}
+.privacy3__content,
+.bullying3__content {
+  display: flex;
+  gap: var(--mb-2);
+  justify-content: center;
+}
+.privacy3__img,
+.bullying3__img {
+  padding: var(--mb-0-75);
+  background: linear-gradient(133.3deg, rgba(109, 132, 255, 0.63) 0%, rgba(229, 237, 240, 0.63) 56.71%, rgba(76, 66, 217, 0.63) 114.61%);
+  box-shadow: -3px 4px 4px rgba(98, 123, 255, 0.25);
+  border-radius: 20px;
+  width: 90px;
+}
+.privacy3__box,
+.bullying3__box {
+  background: #ffffff;
+  box-shadow: -2px 2px 10px rgba(0, 20, 123, 0.15);
+  border-radius: 12px;
+  text-align: center;
+  padding: var(--mb-1-5);
+  width: 273px;
+  height: 340px;
+}
+.privacy3__box:hover {
+  background: linear-gradient(180deg, #3b1684 -11.18%, #0a1524 41.92%);
+  color: white;
+}
+.bullying3__box:hover {
+  background: linear-gradient(144.27deg, rgba(112, 42, 252, 0.6) -1.28%, rgba(146, 92, 250, 0.37) 49.69%, rgba(181, 138, 255, 0.94) 103.95%);
+  border-radius: 10px;
+}
+.bullying3__box:hover > .box4__desc {
+  color: var(--black);
+}
+.box3__title {
+  margin: var(--mb-1) 0;
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 24px;
+}
+.box3__desc {
+  font-weight: 400;
+  font-size: 0.875rem;
+  line-height: 21px;
+}
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.bullying3__info {
+  text-align: center;
+  margin: var(--mb-4) 0;
+}
+.bullying3__title {
+  margin-bottom: var(--mb-4);
+  text-align: center;
+}
+.bullying3__img {
+  margin-bottom: var(--mb-3);
+}
+.box4__desc {
+  color: var(--primary2);
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 138.4%;
+  text-align: center;
+  letter-spacing: 0.005em;
+}
+.bullying2__image img,
+.privacy2__image img {
+  height: 420px;
+}
+.bullying__content1 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--mb-3);
+  height: 60rem;
+  align-items: start;
+  justify-content: center;
+}
+.bullying__content3,
+.bullying__content2 {
+  align-self: center;
+}
+.bullying__content2 .bullying__box:first-child {
+  margin-bottom: var(--mb-3);
+}
+.bullying3 {
+  margin: var(--mb-2) 0;
+}
 /*=============== BREAKPOINTS ===============*/
 /* Small devices */
 @media screen and (max-width: 340px) {
@@ -742,7 +1020,6 @@ footer {
 @media screen and (min-width: 767px) {
   .nav {
     height: calc(var(--header-height) + 1rem);
-    /* box-shadow: 0px 2px 10px rgba(191, 190, 188, 0.55); */
   }
   .nav__close,
   .nav__toggle {
@@ -778,7 +1055,7 @@ footer {
     left: 25%;
     width: 35px;
     height: 5px;
-    background-color: var(--main-color);
+    background-color: var(--primary2);
     border-radius: 12px;
   }
 
@@ -860,6 +1137,15 @@ footer {
     height: 24rem;
     gap: var(--mb-1);
   }
+  .main__container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--mb-1-5);
+  }
+  .second__container {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--mb-4);
+  }
 }
 /* Large devices */
 @media screen and (min-width: 1024px) {
@@ -884,7 +1170,13 @@ footer {
   .nav__link,
   .button__header,
   .footer__nav,
-  .main__desc {
+  .main__desc,
+  .privacy__text,
+  .privacy__desc,
+  .bullying__subtitle,
+  .bullying4__subs,
+  .bullying2__desc,
+  .bullying__desc {
     font-size: 1.125rem;
     line-height: 170.3%;
   }
@@ -897,7 +1189,9 @@ footer {
   .button_home,
   .button_article,
   .box__title,
-  .value__content__title {
+  .value__content__title,
+  .privacy__subtitle,
+  .privacy2__desc {
     font-size: 1.25rem;
   }
 
@@ -909,7 +1203,14 @@ footer {
   .banner__title,
   .value__title,
   .main__title,
-  .detail__title {
+  .detail__title,
+  .privacy__title,
+  .title__content,
+  .privacy2__title,
+  .privacy3__title,
+  .bullying__title,
+  .bullying3__title,
+  .bullying2__title {
     font-size: 2.25rem;
     letter-spacing: 0.005em;
     font-weight: var(--font-bold);
