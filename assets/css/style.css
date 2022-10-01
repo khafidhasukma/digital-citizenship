@@ -29,7 +29,7 @@
   --font-jakarta-plus: "Plus Jakarta Sans", sans-serif;
   --normal-font-size: 0.875rem;
   --big-font: 1.25rem;
-  --biggest-font-size: 2.5rem;
+  --biggest-font-size: 3rem;
   --smaller-font-size: 0.75rem;
 
   /*========== Font weight ==========*/
@@ -216,14 +216,13 @@ img {
 /*=============== HOME ===============*/
 .home {
   /* position: relative; */
-  background-image: url("/assets/img/background.png") !important;
+  background-image: url("/assets/img/bg-mobile.png");
   background-repeat: no-repeat;
   background-size: cover;
   text-align: center;
 }
 
 .home__container {
-  /* position: relative; */
   padding: 7rem 0;
 }
 
@@ -1206,6 +1205,9 @@ section.bullying3 {
 
 /* Medium devices */
 @media screen and (min-width: 767px) {
+  .home {
+    background-image: url("/assets/img/background.png");
+  }
   .nav {
     height: calc(var(--header-height) + 1rem);
   }
