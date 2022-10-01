@@ -53,7 +53,7 @@
 @media only screen and (min-width: 1024px) {
   :root {
     --biggest-font-size: 5rem;
-    --big-font: 1.5rem;
+    --big-font: 2.5rem;
     --normal-font-size: 1rem;
     --smaller-font-size: 0.813rem;
   }
@@ -89,9 +89,11 @@ img {
   max-width: 100%;
   height: auto;
 }
+
 ::-webkit-scrollbar {
   width: 5px;
 }
+
 ::-webkit-scrollbar-thumb {
   background: var(--primary);
   border-radius: 8px;
@@ -259,6 +261,12 @@ img {
   color: white;
   transition: box-shadow 0.4s;
 }
+.button_home:hover,
+.button_article:hover {
+  background: #ffd650;
+  box-shadow: 0px 4px 25px 5px rgba(146, 85, 250, 0.25);
+  color: #ff7002;
+}
 
 .home__images {
   display: grid;
@@ -288,8 +296,8 @@ img {
 /*=============== CONTENT ===============*/
 .faq__container,
 .content2__container,
-.privacy__container,
-.bullying__container {
+.bullying__container,
+.law__container {
   padding: 7rem 1rem;
 }
 .content__container {
@@ -312,7 +320,7 @@ img {
 .article__title,
 .article__title2 {
   font-weight: var(--font-semi-bold);
-  margin-bottom: var(--mb-1-5);
+  margin-bottom: var(--mb-3);
 }
 
 .content__subtitle,
@@ -472,7 +480,7 @@ img {
 .article__title,
 .article__title2 {
   font-weight: var(--font-bold);
-  margin-bottom: var(--mb-2);
+  margin-bottom: var(--mb-3);
 }
 .article__desc:last-child > p {
   margin-top: var(--mb-1);
@@ -507,7 +515,7 @@ img {
 }
 .value__subtitle,
 .value__content__subtitle {
-  margin: 2rem 0;
+  margin: var(--mb-3) 0;
   letter-spacing: 0.005em;
 }
 .value__content {
@@ -565,6 +573,10 @@ img {
   display: none;
   cursor: pointer;
 }
+.button__card:hover {
+  background: #fff8e1;
+  color: #ff7002;
+}
 .card__value:hover {
   background: linear-gradient(95.25deg, #dea720 -5.14%, #ffcc50 -5.13%, #ffb505 55.03%);
   box-shadow: 0px 4px 10px 5px rgba(18, 18, 18, 0.2);
@@ -593,13 +605,29 @@ img {
   margin-top: var(--mb-3);
 }
 .card__content {
+  position: relative;
   background: linear-gradient(144.27deg, rgba(112, 42, 252, 0.6) -1.28%, rgba(146, 92, 250, 0.37) 49.69%, rgba(94, 0, 255, 0.94) 103.95%);
   border-radius: 10px;
   width: 100%;
   text-align: center;
   max-width: 220px;
   padding: var(--mb-1-5);
+  overflow: hidden;
 }
+.card__content:before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 5px solid;
+  border-image-source: linear-gradient(143.83deg, #5500ff -4.41%, rgba(46, 69, 190, 0.13) 53.17%, #0b1625 106.88%);
+  border-image-slice: 1;
+  border-radius: 10px;
+  padding: var(--mb-1-5);
+  -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+}
+
 .card__title {
   color: white;
   font-weight: var(--font-semi-bold);
@@ -794,24 +822,32 @@ footer {
 
 /* lesson */
 .privacy__info,
-.bullying__info {
+.bullying__info,
+.law__info {
   text-align: center;
 }
 .privacy__subtitle,
-.bullying__subtitle {
-  margin: var(--mb-1-5) 0 var(--mb-2) 0;
+.bullying__subtitle,
+.law__subtitle {
+  margin: var(--mb-1-5) 0 var(--mb-4) 0;
 }
 .privacy__title span,
-.bullying__title span {
+.bullying__title span,
+.law__title span {
   color: var(--primary);
 }
 .privacy__title,
 .bullying__title,
-.bullying3__title {
+.bullying3__title,
+.law__title,
+.law2__title {
   color: var(--black);
 }
 .title__content {
   margin: var(--mb-4) 0 var(--mb-2) 0;
+}
+.privacy__container {
+  padding-top: 7rem;
 }
 .privace__content,
 .privacy__content2,
@@ -824,28 +860,65 @@ footer {
 .privacy__content2 {
   align-items: center;
 }
+
 .privacy__box {
-  border: 5px solid var(--primary);
-  border-radius: 10px;
+  position: relative;
   width: 280px;
   height: 365px;
-  padding: var(--mb-1-5);
   justify-self: end;
+  overflow: hidden;
+  padding: var(--mb-1-5);
 }
-
-.bullying__box {
-  border: 5px solid var(--primary);
+.privacy__box:before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 5px solid;
+  border-image-source: linear-gradient(143.83deg, #5500ff -4.41%, #2e45be 53.17%, #0b1625 106.88%);
+  border-image-slice: 1;
   border-radius: 10px;
+  padding: var(--mb-1-5);
+  -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+}
+.privacy__box:hover:before {
+  border: none;
+}
+.privacy__text {
+  font-weight: 500;
+  line-height: 173.9%;
+  letter-spacing: 0.03em;
+}
+.bullying__box {
+  position: relative;
   width: 325px;
   height: 365px;
-  padding: var(--mb-1-5);
   justify-self: center;
   align-self: center;
+  padding: 25px;
+  overflow: hidden;
+  margin-bottom: var(--mb-4);
+}
+.bullying__box:before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 5px solid;
+  border-image-source: linear-gradient(143.83deg, #5500ff -4.41%, #2e45be 53.17%, #0b1625 106.88%);
+  border-image-slice: 1;
+  border-radius: 10px;
+  padding: var(--mb-1-5);
+  -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+}
+.bullying__box:hover:before {
+  border: none;
 }
 .privacy__box:hover,
 .bullying__box:hover {
   background: linear-gradient(180deg, #3b1684 -11.18%, #0a1524 41.92%);
-  border: 1px solid #000000;
   border-radius: 10px;
   color: white;
 }
@@ -867,9 +940,15 @@ footer {
 .bullying__photo {
   text-align: center;
 }
-.privacy__photo img,
-.bullying__photo img {
+.privacy__photo img {
   height: 120px;
+}
+.bullying__photo img {
+  height: 182px;
+}
+.privacy3__img img {
+  height: 75px;
+  text-align: center;
 }
 .privacy__desc,
 .bullying__desc {
@@ -885,25 +964,28 @@ footer {
   background-repeat: no-repeat;
   background-size: cover;
   display: flex;
-  padding: 8rem 0 12rem;
+  height: 55rem;
 }
 .privacy2__container,
 .bullying2__container {
   display: grid;
   align-items: center;
-  grid-template-columns: 45% 55%;
+  grid-template-columns: repeat(2, 1fr);
   gap: var(--mb-4);
   color: white;
 }
 .privacy2__title,
-.bullying2__title {
+.bullying2__title,
+.law3__title {
   margin-bottom: var(--mb-1-5);
   line-height: 138.4%;
   letter-spacing: 0.005em;
 }
 .privacy2__desc,
 .bullying4__subs,
-.bullying2__desc {
+.bullying2__desc,
+.law2__subs,
+.law2__desc {
   font-weight: 500;
   line-height: 173.9%;
   letter-spacing: 0.03em;
@@ -915,40 +997,106 @@ footer {
   text-align: center;
   margin-bottom: var(--mb-4);
 }
-.privacy3__content,
-.bullying3__content {
+.privacy3__content {
   display: flex;
   gap: var(--mb-2);
   justify-content: center;
 }
-.privacy3__img,
+.bullying3__content {
+  display: flex;
+  gap: var(--mb-4);
+  justify-content: center;
+}
 .bullying3__img {
+  height: 170px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.privacy3__img {
   padding: var(--mb-0-75);
   background: linear-gradient(133.3deg, rgba(109, 132, 255, 0.63) 0%, rgba(229, 237, 240, 0.63) 56.71%, rgba(76, 66, 217, 0.63) 114.61%);
   box-shadow: -3px 4px 4px rgba(98, 123, 255, 0.25);
   border-radius: 20px;
   width: 90px;
+  height: 92px;
 }
-.privacy3__box,
+.privacy3__box:hover > .center .privacy3__img {
+  background: linear-gradient(133.3deg, rgba(254, 192, 45, 0.63) 0%, rgba(229, 237, 240, 0.63) 56.71%, rgba(254, 192, 45, 0.63) 114.61%);
+  box-shadow: -3px 4px 4px rgba(98, 123, 255, 0.25);
+}
+.privacy3__box:hover > .center .privacy3__img img {
+  filter: brightness(0) invert(1) !important;
+}
 .bullying3__box {
-  background: #ffffff;
-  box-shadow: -2px 2px 10px rgba(0, 20, 123, 0.15);
-  border-radius: 12px;
+  background: linear-gradient(95.25deg, #dea720 -5.14%, #ffcc50 -5.13%, #ffb505 55.03%);
+  box-shadow: 0px 4px 10px 5px rgba(18, 18, 18, 0.2);
+  border-radius: 10px;
   text-align: center;
   padding: var(--mb-1-5);
   width: 273px;
   height: 340px;
 }
+.bullying3__box {
+  position: relative;
+  background: linear-gradient(95.25deg, #dea720 -5.14%, #ffcc50 -5.13%, #ffb505 55.03%);
+  box-shadow: 0px 4px 10px 5px rgba(18, 18, 18, 0.2);
+  border-radius: 10px;
+  text-align: center;
+  padding: var(--mb-1-5);
+  width: 273px;
+  height: 340px;
+  overflow: hidden;
+}
+.bullying3__box:hover:before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 5px solid;
+  border-image-source: linear-gradient(143.83deg, #5500ff -4.41%, rgba(46, 69, 190, 0.13) 53.17%, #0b1625 106.88%);
+  border-image-slice: 1;
+  border-radius: 10px;
+  padding: var(--mb-1-5);
+  -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+}
+.privacy3__box {
+  position: relative;
+  background: linear-gradient(144.27deg, rgba(112, 42, 252, 0.6) -1.28%, rgba(146, 92, 250, 0.37) 49.69%, rgba(94, 0, 255, 0.94) 103.95%);
+  border-radius: 10px;
+  background: linear-gradient(144.27deg, rgba(112, 42, 252, 0.6) -1.28%, rgba(146, 92, 250, 0.37) 49.69%, rgba(181, 138, 255, 0.94) 103.95%);
+  border-radius: 10px;
+  width: 273px;
+  height: 334px;
+  padding: var(--mb-1-5);
+  text-align: center;
+  overflow: hidden;
+}
+.privacy3__box:before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 5px solid;
+  border-image-source: linear-gradient(143.83deg, #5500ff -4.41%, rgba(46, 69, 190, 0.13) 53.17%, #0b1625 106.88%);
+  border-image-slice: 1;
+  border-radius: 10px;
+  padding: var(--mb-1-5);
+  -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+}
+.privacy3__box:hover:before {
+  border: none;
+}
 .privacy3__box:hover {
-  background: linear-gradient(180deg, #3b1684 -11.18%, #0a1524 41.92%);
+  background: linear-gradient(95.25deg, #dea720 -5.14%, #ffcc50 -5.13%, #ffb505 55.03%);
+  box-shadow: 0px 4px 10px 5px rgba(18, 18, 18, 0.2);
   color: white;
 }
 .bullying3__box:hover {
   background: linear-gradient(144.27deg, rgba(112, 42, 252, 0.6) -1.28%, rgba(146, 92, 250, 0.37) 49.69%, rgba(181, 138, 255, 0.94) 103.95%);
   border-radius: 10px;
-}
-.bullying3__box:hover > .box4__desc {
-  color: var(--black);
 }
 .box3__title {
   margin: var(--mb-1) 0;
@@ -967,19 +1115,26 @@ footer {
   align-items: center;
   flex-direction: column;
 }
-.bullying3__info {
+.bullying3__info,
+.law2__info {
   text-align: center;
   margin: var(--mb-4) 0;
 }
-.bullying3__title {
-  margin-bottom: var(--mb-4);
+.bullying3__title,
+.law2__title {
+  margin-bottom: var(--mb-3);
   text-align: center;
 }
 .bullying3__img {
   margin-bottom: var(--mb-3);
+
+  width: 170px;
+}
+.bullying3__img img {
+  height: 180px;
 }
 .box4__desc {
-  color: var(--primary2);
+  color: white;
   font-weight: 500;
   font-size: 1rem;
   line-height: 138.4%;
@@ -987,26 +1142,59 @@ footer {
   letter-spacing: 0.005em;
 }
 .bullying2__image img,
-.privacy2__image img {
+.privacy2__image img,
+.law2__image img {
   height: 420px;
 }
 .bullying__content1 {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: var(--mb-3);
-  height: 60rem;
-  align-items: start;
-  justify-content: center;
+  grid-template-columns: repeat(2, 40%);
+  height: 80rem;
 }
-.bullying__content3,
-.bullying__content2 {
+section.bullying3 {
+  margin: var(--mb-4) 0 5rem 0;
+  position: relative;
+}
+.bullying__content3 {
   align-self: center;
 }
-.bullying__content2 .bullying__box:first-child {
-  margin-bottom: var(--mb-3);
+.image__bottom {
+  position: absolute;
+  right: 0;
+  bottom: 0;
 }
-.bullying3 {
-  margin: var(--mb-2) 0;
+
+.law {
+  background-image: url("/assets/img/bg-law.svg") !important;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  padding: 15rem 0;
+}
+.law2__container {
+  display: grid;
+  align-items: center;
+  grid-template-columns: 50% 50%;
+  gap: var(--mb-4);
+  color: white;
+}
+.law3__container {
+  display: grid;
+  align-items: center;
+  grid-template-columns: 50% 50%;
+  gap: var(--mb-4);
+  color: white;
+  margin-top: 8rem;
+  text-align: end;
+}
+.law2__image {
+  justify-self: center;
+}
+.law3__title {
+  font-size: 1.5rem;
 }
 /*=============== BREAKPOINTS ===============*/
 /* Small devices */
@@ -1030,8 +1218,7 @@ footer {
     column-gap: 2rem;
   }
   .home__container {
-    height: 100vh;
-    padding: 0 1rem;
+    min-height: 100vh;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     align-items: center;
@@ -1108,7 +1295,7 @@ footer {
   }
   .article__info {
     margin-left: auto !important;
-    width: 53%;
+    width: 48%;
   }
   .article__container2 {
     background-image: url("/assets/img/index-article2.png") !important;
@@ -1120,7 +1307,7 @@ footer {
     text-align: start;
   }
   .article__info2 {
-    width: 53%;
+    width: 47%;
   }
   .article__title2 {
     text-align: end;
@@ -1136,6 +1323,13 @@ footer {
     align-items: end;
     height: 24rem;
     gap: var(--mb-1);
+  }
+  .card__info {
+    align-self: center;
+    justify-self: center;
+  }
+  .icon__up {
+    margin-bottom: var(--mb-2);
   }
   .main__container {
     display: grid;
@@ -1176,7 +1370,10 @@ footer {
   .bullying__subtitle,
   .bullying4__subs,
   .bullying2__desc,
-  .bullying__desc {
+  .bullying__desc,
+  .law__subtitle,
+  .law2__subs,
+  .law2__desc {
     font-size: 1.125rem;
     line-height: 170.3%;
   }
@@ -1210,6 +1407,8 @@ footer {
   .privacy3__title,
   .bullying__title,
   .bullying3__title,
+  .law__title,
+  .law2__title,
   .bullying2__title {
     font-size: 2.25rem;
     letter-spacing: 0.005em;
@@ -1222,6 +1421,13 @@ footer {
 
 @media screen and (min-width: 1048px) {
   .container {
+    margin-inline: auto;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
     margin-inline: auto;
   }
 }
