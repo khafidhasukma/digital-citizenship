@@ -75,6 +75,7 @@ body {
   background-color: var(--body-color);
   font-family: var(--body-font);
   color: var(--dark-gray);
+  overflow-x: hidden;
 }
 
 ul {
@@ -930,9 +931,16 @@ footer {
   line-height: 173.9%;
   letter-spacing: 0.03em;
 }
+.image__bottom {
+  margin-left: auto;
+  width: 50%;
+  margin-right: -1rem;
+  max-width: 200px;
+}
+
 .bullying__box {
   position: relative;
-  width: 325px;
+  max-width: 260px;
   height: 365px;
   justify-self: center;
   align-self: center;
@@ -962,6 +970,7 @@ footer {
   border-radius: 10px;
   color: white;
 }
+
 .privacy__box:hover > .privacy__number,
 .privacy__box:hover > .privacy__desc,
 .bullying__box:hover > .bullying__number,
@@ -1004,14 +1013,15 @@ footer {
   background-repeat: no-repeat;
   background-size: cover;
   display: flex;
-  height: 55rem;
+  height: 80rem;
+  align-items: center;
+  flex-direction: column;
+  padding: 0 var(--mb-1-5);
+  justify-content: center;
+  margin-top: var(--mb-3);
 }
 .privacy2__container,
 .bullying2__container {
-  display: grid;
-  align-items: center;
-  grid-template-columns: repeat(2, 1fr);
-  gap: var(--mb-4);
   color: white;
 }
 .privacy2__title,
@@ -1049,6 +1059,7 @@ footer {
 }
 .bullying3__content {
   display: flex;
+  flex-wrap: wrap;
   gap: var(--mb-4);
   justify-content: center;
 }
@@ -1073,15 +1084,7 @@ footer {
 .privacy3__box:hover > .center .privacy3__img img {
   filter: brightness(0) invert(1) !important;
 }
-.bullying3__box {
-  background: linear-gradient(95.25deg, #dea720 -5.14%, #ffcc50 -5.13%, #ffb505 55.03%);
-  box-shadow: 0px 4px 10px 5px rgba(18, 18, 18, 0.2);
-  border-radius: 10px;
-  text-align: center;
-  padding: var(--mb-1-5);
-  width: 273px;
-  height: 340px;
-}
+
 .bullying3__box {
   position: relative;
   background: linear-gradient(95.25deg, #dea720 -5.14%, #ffcc50 -5.13%, #ffb505 55.03%);
@@ -1089,7 +1092,7 @@ footer {
   border-radius: 10px;
   text-align: center;
   padding: var(--mb-1-5);
-  width: 273px;
+  max-width: 230px;
   height: 340px;
   overflow: hidden;
 }
@@ -1192,22 +1195,14 @@ footer {
   max-width: 300px;
   margin-bottom: var(--mb-1-5);
 }
-.bullying__content1 {
-  display: grid;
-  grid-template-columns: repeat(2, 40%);
-  height: 80rem;
-}
+
 section.bullying3 {
   margin: var(--mb-4) 0 5rem 0;
   position: relative;
+  overflow: hidden;
 }
 .bullying__content3 {
   align-self: center;
-}
-.image__bottom {
-  position: absolute;
-  right: 0;
-  bottom: 0;
 }
 
 .law {
@@ -1228,7 +1223,8 @@ section.bullying3 {
 .law2__image {
   justify-self: center;
 }
-.law__image img {
+.law__image img,
+.bullying__image img {
   width: 100%;
   max-width: 350px;
 }
@@ -1261,6 +1257,12 @@ section.bullying3 {
 .law2__desc,
 .quote__title {
   line-height: 170.3%;
+}
+.bullying__content1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
 /*=============== BREAKPOINTS ===============*/
@@ -1350,6 +1352,12 @@ section.bullying3 {
   }
   .article2__image {
     order: 2;
+  }
+  .bullying__content3 {
+    align-self: center;
+  }
+  .bullying2 {
+    height: 50rem;
   }
 }
 @media screen and (min-width: 767px) {
@@ -1548,6 +1556,25 @@ section.bullying3 {
     justify-content: center;
     padding-bottom: 7rem;
   }
+  .privacy2__container,
+  .bullying2__container {
+    display: grid;
+    align-items: center;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--mb-4);
+    color: white;
+  }
+
+  .bullying3__box {
+    max-width: 250px;
+  }
+  .image__bottom {
+    position: absolute;
+    right: 0;
+    margin-left: 0;
+    bottom: 10rem;
+    width: auto;
+  }
 }
 /* Large devices */
 @media screen and (min-width: 1024px) {
@@ -1677,9 +1704,31 @@ section.bullying3 {
     padding: 15rem 0;
   }
   .law__image img,
-  .law2__image img {
+  .law2__image img,
+  .bullying__imag img {
     width: 100%;
     max-width: 450px;
+  }
+  .bullying3__box {
+    max-width: 270px;
+  }
+  .image__bottom {
+    position: absolute;
+    right: 0;
+    margin-left: 0;
+    bottom: 0;
+    width: auto;
+  }
+  .bullying__content1 {
+    display: grid;
+    grid-template-columns: repeat(2, 40%);
+    height: 80rem;
+  }
+  .bullying__box {
+    max-width: 325px;
+  }
+  .bullying__content2 {
+    align-self: start !important;
   }
 }
 
@@ -1731,8 +1780,12 @@ section.bullying3 {
     font-size: 1.25rem;
     height: 4rem;
   }
-  .law__image img {
+  .law__image img,
+  .bullying__image img {
     width: 100%;
     max-width: 550px;
+  }
+  .image__bottom {
+    max-width: 300px;
   }
 }
