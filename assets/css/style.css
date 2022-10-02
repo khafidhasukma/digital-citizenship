@@ -236,6 +236,7 @@ img {
   z-index: -100;
   margin: var(--mb-1) auto;
   letter-spacing: 0.005em;
+  font-size: 1rem;
 }
 
 .home__title {
@@ -248,7 +249,10 @@ img {
 
 .home__description {
   color: white;
-  margin-bottom: var(--mb-1-5);
+  margin-bottom: var(--mb-3);
+  font-size: 1rem;
+  letter-spacing: 0.005em;
+  line-height: 170.3%;
 }
 
 .button_home,
@@ -259,6 +263,7 @@ img {
   padding: 0.75rem 2rem;
   color: white;
   transition: box-shadow 0.4s;
+  font-size: 1rem;
 }
 .button_home:hover,
 .button_article:hover {
@@ -293,17 +298,17 @@ img {
 }
 
 /*=============== CONTENT ===============*/
-.faq__container,
 .content2__container,
 .bullying__container,
 .law__container {
   padding: 7rem 1rem;
 }
 .content__container {
-  padding: 7rem 0 3rem 0;
+  padding: 5rem 0;
 }
 .value__container {
-  padding-top: 5rem;
+  padding: 5rem 0;
+  background: #e0d1ff;
 }
 .content2__container {
   padding: 0 0 7rem 0;
@@ -313,20 +318,24 @@ img {
 .faq__image {
   text-align: center;
 }
-
 .content__title,
-.faq__title,
 .article__title,
 .article__title2 {
-  font-weight: var(--font-semi-bold);
-  margin-bottom: var(--mb-3);
+  font-weight: var(--font-bold);
+  margin-bottom: var(--mb-2);
 }
-
 .content__subtitle,
 .faq__subtitle {
   font-size: var(--smallest-font-size);
   letter-spacing: 0.005em;
   line-height: 170.3%;
+}
+.faq__title {
+  margin-bottom: var(--mb-2);
+  line-height: 138.4%;
+}
+.faq__container {
+  padding: 7rem 1rem 5rem;
 }
 
 /*=============== ACCORDION ===============*/
@@ -399,16 +408,16 @@ img {
 .box__container {
   display: flex;
   flex-wrap: wrap;
-  flex-direction: column;
-  align-items: center;
+  align-items: end;
   height: auto;
+  justify-content: center;
   margin-top: var(--mb-1-5);
 }
 .box__content {
   background: #9255fa;
   box-shadow: -2px 10px 30px rgba(99, 49, 186, 0.51);
-  width: 80%;
-  max-width: 300px;
+  width: 100%;
+  max-width: 230px;
   text-align: center;
   height: 270px;
   display: flex;
@@ -429,7 +438,6 @@ img {
   box-shadow: 0px 4px 25px 5px rgba(146, 85, 250, 0.25);
   height: 300px;
 }
-
 .box__content:hover > .box__icon {
   background: #dfa100;
   border: 3px solid #ffffff;
@@ -476,6 +484,12 @@ img {
 .article__container2 {
   text-align: center;
 }
+.article__container2 {
+  margin: 5rem 0;
+}
+.article__container {
+  margin-bottom: 5rem;
+}
 .article__title,
 .article__title2 {
   font-weight: var(--font-bold);
@@ -489,10 +503,14 @@ img {
 }
 .article__image {
   margin-left: -2rem !important;
+  max-width: 500px;
+  margin: 2rem 0;
 }
 .article2__image {
   margin-right: -2rem !important;
-  margin-top: 3rem;
+  max-width: 500px;
+  margin: 2rem 0;
+  margin-left: auto;
 }
 .article__desc2 {
   margin: var(--mb-1) 0 3rem 0;
@@ -514,7 +532,7 @@ img {
 }
 .value__subtitle,
 .value__content__subtitle {
-  margin: var(--mb-3) 0;
+  margin: var(--mb-2) 0;
   letter-spacing: 0.005em;
 }
 .value__content {
@@ -525,9 +543,9 @@ img {
   display: flex;
   flex-wrap: wrap;
   gap: var(--mb-1);
-  flex-direction: column;
   align-items: center;
   height: auto;
+  justify-content: center;
 }
 .value__content__title {
   letter-spacing: 0.03em;
@@ -538,6 +556,16 @@ img {
   line-height: 170.3%;
   letter-spacing: 0.005em;
 }
+.value__image img {
+  width: 20rem;
+  height: 100%;
+  object-fit: cover;
+}
+.value__image {
+  width: 100%;
+  border-radius: 7px 141.5px 7px 7px;
+  overflow: hidden;
+}
 .card__value {
   background: #492b81;
   border-radius: 7px 141.5px 7px 7px;
@@ -546,6 +574,8 @@ img {
   transition: transform 400ms ease;
   overflow: hidden !important;
   position: relative;
+  margin-bottom: var(--mb-1-5);
+  max-width: 230px;
 }
 .arrow__card {
   background: #d9d9d9;
@@ -626,6 +656,10 @@ img {
   -webkit-mask-composite: xor;
   mask-composite: exclude;
 }
+.card__info {
+  text-align: center;
+  max-width: 230px;
+}
 
 .card__title {
   color: white;
@@ -641,7 +675,7 @@ img {
   background-size: cover;
   text-align: center;
   border-radius: 30px;
-  padding: 4rem 0;
+  padding: 4rem 1rem;
 }
 #banner {
   margin-bottom: 7rem;
@@ -696,11 +730,14 @@ footer {
 }
 .main__title {
   margin: 0.5rem 0;
+  font-size: 1.25rem;
 }
 .main__image img {
   height: 100%;
   object-fit: cover;
   border-radius: 3px;
+  max-height: 330px;
+  width: 100%;
 }
 .second__date,
 .main__date,
@@ -708,7 +745,7 @@ footer {
   font-weight: var(--font-semi-bold);
   letter-spacing: 0.02em;
   color: rgba(0, 0, 0, 0.5);
-  font-size: 1rem;
+  font-size: 0.875rem;
 }
 .second__more,
 .main__more {
@@ -721,7 +758,7 @@ footer {
 .second__container {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: var(--mb-2);
+  gap: var(--mb-1);
 }
 #article {
   margin-bottom: 7rem;
@@ -729,6 +766,7 @@ footer {
 .second__title {
   color: #36276a;
   margin: var(--mb-0-5) 0;
+  font-size: 0.9375rem;
 }
 .second__more {
   font-size: var(--normal-font-size);
@@ -739,7 +777,7 @@ footer {
 
 .detail__article,
 .main__container {
-  padding: 8rem 0 7rem 0;
+  padding: 6rem 0 4rem;
 }
 .detail__image img {
   border-radius: 10px;
@@ -759,7 +797,8 @@ footer {
 }
 .detail__title {
   text-align: center;
-  margin: var(--mb-3);
+  margin: var(--mb-3) 1rem;
+  letter-spacing: 0.005em;
 }
 .detail__image {
   margin-bottom: var(--mb-1);
@@ -784,8 +823,7 @@ footer {
   background: #ffffff;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
   border-radius: 10px;
-  display: grid;
-  grid-template-columns: 60% 40%;
+
   overflow: hidden;
   align-items: center;
 }
@@ -798,20 +836,23 @@ footer {
 }
 .quote__image img {
   height: 100%;
+  max-height: 300px;
+  width: 100%;
+  object-fit: cover;
 }
 .quote__image {
   height: 100%;
 }
 .quote__title {
   font-weight: 500;
-  font-size: 1.125rem;
+  font-size: 1rem;
   line-height: 153%;
   letter-spacing: 0.03em;
   margin: var(--mb-1) 0 var(--mb-2) 0;
 }
 .quote__author {
   font-weight: 700;
-  font-size: 1.25rem;
+  font-size: 1.125rem;
   line-height: 153%;
   letter-spacing: 0.03em;
 }
@@ -1195,11 +1236,140 @@ section.bullying3 {
 .law3__title {
   font-size: 1.5rem;
 }
+.home__subtitle,
+.button_home,
+.button_article,
+.article__desc,
+.banner__subtitle,
+.value__subtitle,
+.main__more,
+.content__subtitle,
+.faq__subtitle,
+.article__desc2 p,
+.article__desc1,
+.nav__link,
+.button__header,
+.footer__nav,
+.main__desc,
+.privacy__text,
+.privacy__desc,
+.bullying__subtitle,
+.bullying4__subs,
+.bullying2__desc,
+.bullying__desc,
+.law__subtitle,
+.law2__subs,
+.law2__desc,
+.quote__title {
+  line-height: 170.3%;
+}
 /*=============== BREAKPOINTS ===============*/
 /* Small devices */
 @media screen and (max-width: 340px) {
   .container {
     margin-inline: var(--mb-1);
+  }
+  .main__container {
+    padding: 6rem 0 4rem;
+  }
+  .second__container {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .quote__title {
+    font-size: 0.875rem;
+  }
+  .quote__author {
+    font-size: 1rem;
+  }
+  .content__container {
+    padding: 4rem 0;
+  }
+}
+
+@media screen and (min-width: 508px) {
+  .box__content:first-child,
+  .box__content:nth-child(3) {
+    border-radius: 35px 0 0 35px;
+  }
+  .box__content:last-child,
+  .box__content:nth-child(2) {
+    border-radius: 0 35px 35px 0;
+  }
+  .box__content:hover:first-child,
+  .box__content:nth-child(3):hover {
+    border-radius: 35px 35px 0 35px;
+  }
+
+  .box__content:hover:last-child,
+  .box__content:nth-child(2):hover {
+    border-radius: 35px 35px 35px 0px;
+    margin-top: 2rem;
+  }
+  .box__content:last-child,
+  .box__content:nth-child(3) {
+    margin-top: 4rem;
+  }
+}
+@media screen and (min-width: 738px) {
+  .box__content:last-child {
+    border-radius: 0 0 35px 35px;
+  }
+  .box__content:nth-child(2) {
+    border-radius: 0 0 0 0;
+  }
+  .box__content:nth-child(2):hover {
+    border-radius: 35px 35px 0 0;
+  }
+  .box__content:nth-child(3) {
+    border-radius: 0 35px 35px 0;
+  }
+  .box__content:hover:first-child {
+    border-radius: 35px 35px 0 35px;
+  }
+  .box__content:hover:last-child {
+    border-radius: 0 0 35px 35px;
+  }
+  .box__content:nth-child(3):hover {
+    border-radius: 35px 35px 35px 0;
+  }
+  .box__content:last-child,
+  .box__content:nth-child(3) {
+    margin-top: 0;
+  }
+  .box__content:hover:last-child,
+  .box__content:nth-child(2):hover {
+    margin-top: 0;
+  }
+  .container__flex {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    text-align: start;
+    gap: var(--mb-1-5);
+  }
+  .article2__image {
+    order: 2;
+  }
+}
+@media screen and (min-width: 767px) {
+  .box__content:last-child {
+    border-radius: 0 0 35px 35px;
+  }
+  .box__content:nth-child(2),
+  .box__content:nth-child(3) {
+    border-radius: 0 0 0 0;
+  }
+  .box__content:last-child,
+  .box__content:nth-child(3) {
+    margin-top: 0;
+  }
+  .box__content:hover:last-child,
+  .box__content:nth-child(2):hover {
+    margin-top: 0;
+  }
+  .box__content {
+    max-width: 100%;
   }
 }
 
@@ -1270,7 +1440,7 @@ section.bullying3 {
   }
 
   .box__content:hover > .box__content:first-child {
-    border-radius: 20px 20px 0px 20px !important;
+    border-radius: 35px 35px 0px 35px !important;
   }
   .box__content:first-child:hover {
     border-radius: 35px 35px 0px 35px;
@@ -1286,11 +1456,7 @@ section.bullying3 {
     width: 40px;
   }
 
-  .article__container {
-    background-image: url("/assets/img/index-article.png") !important;
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 50rem;
+  .container__flex {
     display: flex;
     align-items: center;
     text-align: start;
@@ -1299,15 +1465,7 @@ section.bullying3 {
     margin-left: auto !important;
     width: 48%;
   }
-  .article__container2 {
-    background-image: url("/assets/img/index-article2.png") !important;
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 50rem;
-    display: flex;
-    align-items: center;
-    text-align: start;
-  }
+
   .article__info2 {
     width: 47%;
   }
@@ -1318,12 +1476,13 @@ section.bullying3 {
   /* content2 index */
   .card__value,
   .card__info {
-    width: 23%;
+    max-width: 200px;
+    margin-bottom: 0;
   }
   .value__content {
     flex-direction: row;
     align-items: end;
-    height: 24rem;
+    height: auto;
     gap: var(--mb-1);
   }
   .card__info {
@@ -1340,7 +1499,26 @@ section.bullying3 {
   }
   .second__container {
     grid-template-columns: repeat(3, 1fr);
-    gap: var(--mb-4);
+    gap: var(--mb-2);
+  }
+  .main__image img,
+  .second__image img,
+  .quote__image img {
+    max-height: 100%;
+  }
+  .second__title {
+    height: 3rem;
+  }
+  .detail__date {
+    font-size: 1rem;
+  }
+  .quote__box {
+    display: grid;
+    grid-template-columns: 60% 40%;
+  }
+  .article__image,
+  .article__image2 {
+    max-width: auto;
   }
 }
 /* Large devices */
@@ -1375,7 +1553,8 @@ section.bullying3 {
   .bullying__desc,
   .law__subtitle,
   .law2__subs,
-  .law2__desc {
+  .law2__desc,
+  .quote__title {
     font-size: 1.125rem;
     line-height: 170.3%;
   }
@@ -1390,7 +1569,9 @@ section.bullying3 {
   .box__title,
   .value__content__title,
   .privacy__subtitle,
-  .privacy2__desc {
+  .privacy2__desc,
+  .second__title,
+  .quote__author {
     font-size: 1.25rem;
   }
 
@@ -1419,11 +1600,78 @@ section.bullying3 {
   .box__desc {
     font-size: 0.875rem !important;
   }
+  .faq__subtitle {
+    padding-inline: 6rem;
+  }
+  .detail__article,
+  .main__container {
+    padding: 8rem 0 7rem 0;
+  }
+  .second__container {
+    gap: var(--mb-3);
+  }
+  .second__title {
+    height: 3.75rem;
+  }
+  .detail__title {
+    margin: var(--mb-3);
+  }
+  .article__container,
+  .article__container2,
+  .container__flex {
+    height: 50rem;
+  }
+  .content__title,
+  .article__title,
+  .article__title2 {
+    margin-bottom: var(--mb-3);
+  }
+  .value__subtitle {
+    margin: var(--mb-3) 0;
+    letter-spacing: 0.005em;
+  }
+  .card__value,
+  .card__info {
+    max-width: 100%;
+    width: 23%;
+    margin-bottom: 0;
+  }
+  .value__content {
+    flex-direction: row;
+    align-items: end;
+    height: auto;
+    gap: var(--mb-1);
+  }
+  .card__info {
+    text-align: start;
+  }
 }
 
 @media screen and (min-width: 1048px) {
   .container {
     margin-inline: auto;
+  }
+  .faq__container {
+    padding: 7rem 0 6rem;
+  }
+  .article__image,
+  .article2__image {
+    display: none;
+  }
+
+  .article__container {
+    background-image: url("/assets/img/index-article.png") !important;
+    background-repeat: no-repeat;
+    background-size: cover;
+    align-items: center;
+  }
+  .article__container2 {
+    background-image: url("/assets/img/index-article2.png") !important;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    text-align: start;
   }
 }
 
@@ -1431,5 +1679,12 @@ section.bullying3 {
   .container {
     max-width: 1140px;
     margin-inline: auto;
+  }
+  .second__container {
+    gap: var(--mb-4);
+  }
+  .second__title {
+    font-size: 1.25rem;
+    height: 4rem;
   }
 }
