@@ -217,7 +217,7 @@ img {
 /*=============== HOME ===============*/
 .home {
   /* position: relative; */
-  background-image: url("/assets/img/bg-mobile.png");
+  background-image: url("../img/bg-mobile.png");
   background-repeat: no-repeat;
   background-size: cover;
   text-align: center;
@@ -671,7 +671,7 @@ img {
 
 /* banner */
 .banner__container {
-  background-image: url("/assets/img/bg-slogan.svg") !important;
+  background-image: url("../img/bg-slogan.svg") !important;
   background-repeat: no-repeat;
   background-size: cover;
   text-align: center;
@@ -699,6 +699,9 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.footer__nav a:hover {
+  color: var(--primary);
 }
 .footer__nav {
   gap: var(--mb-1-5);
@@ -848,7 +851,7 @@ footer {
   align-items: center;
 }
 .quote {
-  background-image: url("/assets/img/bg-quote.png") !important;
+  background-image: url("../img/bg-quote.png") !important;
   background-size: cover;
   display: flex;
   align-items: center;
@@ -1028,8 +1031,7 @@ footer {
 }
 .privacy2,
 .bullying2 {
-  /* position: relative; */
-  background-image: url("/assets/img/bg-lesson.svg") !important;
+  background-image: url("../img/bg-lesson.svg") !important;
   background-repeat: no-repeat;
   background-size: cover;
   display: flex;
@@ -1136,7 +1138,7 @@ footer {
   border-radius: 10px;
   background: linear-gradient(144.27deg, rgba(112, 42, 252, 0.6) -1.28%, rgba(146, 92, 250, 0.37) 49.69%, rgba(181, 138, 255, 0.94) 103.95%);
   border-radius: 10px;
-  width: 273px;
+  width: 260px;
   height: 334px;
   padding: var(--mb-1-5);
   text-align: center;
@@ -1407,7 +1409,7 @@ section.bullying3 {
 /* Medium devices */
 @media screen and (min-width: 767px) {
   .home {
-    background-image: url("/assets/img/background.png");
+    background-image: url("../img/background.png");
   }
   .nav {
     height: calc(var(--header-height) + 1rem);
@@ -1570,7 +1572,7 @@ section.bullying3 {
     height: 420px;
   }
   .law {
-    background-image: url("/assets/img/bg-law.svg") !important;
+    background-image: url("../img/bg-law.svg") !important;
     background-repeat: no-repeat;
     background-size: cover;
     display: flex;
@@ -1786,13 +1788,13 @@ section.bullying3 {
   }
 
   .article__container {
-    background-image: url("/assets/img/index-article.png") !important;
+    background-image: url("../img/index-article.png") !important;
     background-repeat: no-repeat;
     background-size: cover;
     align-items: center;
   }
   .article__container2 {
-    background-image: url("/assets/img/index-article2.png") !important;
+    background-image: url("../img/index-article2.png") !important;
     background-repeat: no-repeat;
     background-size: cover;
     display: flex;
