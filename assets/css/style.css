@@ -701,13 +701,13 @@ footer {
   align-items: center;
 }
 .footer__nav {
-  gap: 2rem;
+  gap: var(--mb-1-5);
   margin-top: var(--mb-1);
   letter-spacing: 0.03em;
 }
 .footer__socmed {
   margin: var(--mb-1) 0;
-  gap: var(--mb-2);
+  gap: var(--mb-1-5);
 }
 .footer__nav a {
   color: var(--dark-gray);
@@ -747,6 +747,25 @@ footer {
   letter-spacing: 0.02em;
   color: rgba(0, 0, 0, 0.5);
   font-size: 0.875rem;
+}
+.title__detail {
+  font-weight: var(--font-semi-bold);
+  font-size: 1rem;
+}
+.detail__list li,
+.list li {
+  margin-bottom: var(--mb-1);
+}
+.list,
+.detail__list {
+  margin-left: var(--mb-2);
+}
+.detail__list {
+  list-style-type: disc;
+}
+.link__detail {
+  margin-top: var(--mb-4);
+  text-align: end;
 }
 .second__more,
 .main__more {
@@ -1675,6 +1694,7 @@ section.bullying3 {
   .detail__title {
     margin: var(--mb-3);
   }
+
   .article__container,
   .article__container2,
   .container__flex {
