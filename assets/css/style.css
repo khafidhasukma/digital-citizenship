@@ -284,6 +284,12 @@ img {
   animation: float-img 3s ease-in-out infinite;
   width: 300px;
 }
+.privacy__image,
+.bullying__image,
+.law__image {
+  justify-self: center;
+  animation: float-img 3s ease-in-out infinite;
+}
 
 /* Animation image */
 @keyframes float-img {
@@ -399,6 +405,9 @@ img {
 
 .accordion-open > .accordion__header .accordion__icon {
   filter: brightness(0) invert(1) !important;
+}
+.accordion-open > .accordion__content {
+  background: #f2ecff;
 }
 
 .accordion__item {
@@ -1455,7 +1464,7 @@ section.bullying3 {
   .box__container {
     flex-direction: row;
     align-items: end;
-    height: 19rem;
+    height: 22rem;
   }
   .box__content {
     width: 25%;
@@ -1800,6 +1809,7 @@ section.bullying3 {
     display: flex;
     align-items: center;
     text-align: start;
+    margin: 0;
   }
 }
 
