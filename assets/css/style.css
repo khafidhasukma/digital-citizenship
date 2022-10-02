@@ -894,9 +894,6 @@ footer {
 .privacy__content2,
 .privacy__content3 {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: var(--mb-3);
-  margin-bottom: var(--mb-3);
 }
 .privacy__content2 {
   align-items: center;
@@ -906,7 +903,7 @@ footer {
   position: relative;
   width: 280px;
   height: 365px;
-  justify-self: end;
+  justify-self: center;
   overflow: hidden;
   padding: var(--mb-1-5);
 }
@@ -930,6 +927,10 @@ footer {
   font-weight: 500;
   line-height: 173.9%;
   letter-spacing: 0.03em;
+  margin-bottom: var(--mb-1-5);
+}
+.privacy__box {
+  margin-bottom: var(--mb-1-5);
 }
 .image__bottom {
   margin-left: auto;
@@ -1054,6 +1055,7 @@ footer {
 }
 .privacy3__content {
   display: flex;
+  flex-wrap: wrap;
   gap: var(--mb-2);
   justify-content: center;
 }
@@ -1190,7 +1192,7 @@ footer {
   letter-spacing: 0.005em;
 }
 .bullying2__image img,
-.privacy2__imag imge,
+.privacy2__image imge,
 .law2__image img {
   max-width: 300px;
   margin-bottom: var(--mb-1-5);
@@ -1224,7 +1226,8 @@ section.bullying3 {
   justify-self: center;
 }
 .law__image img,
-.bullying__image img {
+.bullying__image img,
+.privacy__image img {
   width: 100%;
   max-width: 350px;
 }
@@ -1356,7 +1359,8 @@ section.bullying3 {
   .bullying__content3 {
     align-self: center;
   }
-  .bullying2 {
+  .bullying2,
+  .privacy2 {
     height: 50rem;
   }
 }
@@ -1730,6 +1734,15 @@ section.bullying3 {
   .bullying__content2 {
     align-self: start !important;
   }
+  .privace__content,
+  .privacy__content2,
+  .privacy__content3 {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--mb-3);
+  }
+  .privacy__box {
+    justify-self: end;
+  }
 }
 
 @media screen and (min-width: 960px) {
@@ -1781,7 +1794,8 @@ section.bullying3 {
     height: 4rem;
   }
   .law__image img,
-  .bullying__image img {
+  .bullying__image img,
+  .privacy__image img {
     width: 100%;
     max-width: 550px;
   }
