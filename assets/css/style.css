@@ -301,7 +301,7 @@ img {
 .content2__container,
 .bullying__container,
 .law__container {
-  padding: 7rem 1rem;
+  padding: 7rem 0 2rem;
 }
 .content__container {
   padding: 5rem 0;
@@ -1015,9 +1015,14 @@ footer {
   color: white;
 }
 .privacy2__title,
-.bullying2__title,
-.law3__title {
+.bullying2__title {
   margin-bottom: var(--mb-1-5);
+  line-height: 138.4%;
+  letter-spacing: 0.005em;
+}
+
+.law3__title {
+  margin-bottom: var(--mb-3);
   line-height: 138.4%;
   letter-spacing: 0.005em;
 }
@@ -1182,9 +1187,10 @@ footer {
   letter-spacing: 0.005em;
 }
 .bullying2__image img,
-.privacy2__image img,
+.privacy2__imag imge,
 .law2__image img {
-  height: 420px;
+  max-width: 300px;
+  margin-bottom: var(--mb-1-5);
 }
 .bullying__content1 {
   display: grid;
@@ -1205,36 +1211,29 @@ section.bullying3 {
 }
 
 .law {
-  background-image: url("/assets/img/bg-law.svg") !important;
-  background-repeat: no-repeat;
-  background-size: cover;
+  background: linear-gradient(180deg, #3b1684 -11.18%, #0a1524 41.92%);
   display: flex;
   align-items: center;
   flex-direction: column;
   justify-content: center;
-  padding: 15rem 0;
+  padding: 7rem 0;
 }
-.law2__container {
-  display: grid;
-  align-items: center;
-  grid-template-columns: 50% 50%;
-  gap: var(--mb-4);
+.law2__container,
+.law3__container {
   color: white;
 }
 .law3__container {
-  display: grid;
-  align-items: center;
-  grid-template-columns: 50% 50%;
-  gap: var(--mb-4);
-  color: white;
-  margin-top: 8rem;
-  text-align: end;
+  margin-top: 5rem;
 }
 .law2__image {
   justify-self: center;
 }
+.law__image img {
+  width: 100%;
+  max-width: 350px;
+}
 .law3__title {
-  font-size: 1.5rem;
+  font-size: 1.125rem;
 }
 .home__subtitle,
 .button_home,
@@ -1263,6 +1262,7 @@ section.bullying3 {
 .quote__title {
   line-height: 170.3%;
 }
+
 /*=============== BREAKPOINTS ===============*/
 /* Small devices */
 @media screen and (max-width: 340px) {
@@ -1520,6 +1520,34 @@ section.bullying3 {
   .article__image2 {
     max-width: auto;
   }
+  .law2__container,
+  .law3__container {
+    display: grid;
+    align-items: center;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--mb-2);
+  }
+  .law3__container {
+    text-align: end;
+  }
+  .law3__container .law2__image {
+    order: 2;
+  }
+  .bullying2__image img,
+  .privacy2__image img,
+  .law2__image img {
+    height: 420px;
+  }
+  .law {
+    background-image: url("/assets/img/bg-law.svg") !important;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    padding-bottom: 7rem;
+  }
 }
 /* Large devices */
 @media screen and (min-width: 1024px) {
@@ -1645,8 +1673,24 @@ section.bullying3 {
   .card__info {
     text-align: start;
   }
+  .law {
+    padding: 15rem 0;
+  }
+  .law__image img,
+  .law2__image img {
+    width: 100%;
+    max-width: 450px;
+  }
 }
 
+@media screen and (min-width: 960px) {
+  .value__content {
+    height: 24rem;
+  }
+  .law3__title {
+    font-size: 1.5rem;
+  }
+}
 @media screen and (min-width: 1048px) {
   .container {
     margin-inline: auto;
@@ -1686,5 +1730,9 @@ section.bullying3 {
   .second__title {
     font-size: 1.25rem;
     height: 4rem;
+  }
+  .law__image img {
+    width: 100%;
+    max-width: 550px;
   }
 }
